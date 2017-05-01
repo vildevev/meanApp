@@ -7,7 +7,7 @@ Genre = require('./models/genre');
 Book = require('./models/book');
 
 // Connect to Mongoose
-mongoose.connect('mongodb://localhost/bookstore');
+mongoose.connect('mongodb://localhost/meanapp');
 var db = mongoose.connection;
 
 app.get('/', function(req, res){
@@ -29,6 +29,15 @@ app.get('/api/genres', function(req, res){
         throw err;
       }
       res.json(books);
+    });
+  });
+
+  app.get('/api/books/:_id', function(req, res){
+    Book.getBookById(req.params._id, function(err, book){
+      if(err){
+        throw err;
+      }
+      res.json(book);
     });
   });
 
