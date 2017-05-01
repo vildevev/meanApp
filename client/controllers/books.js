@@ -8,6 +8,7 @@ myApp.controller('BooksController', ['$scope', '$http', '$location', '$routePara
   }
 
   $scope.getBook = function(){
+    console.log("HELOOOOOOOOO");
     var id = $routeParams.id;
     $http.get('/api/books/'+id).then(function(response){
       $scope.books = response.data;
