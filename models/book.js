@@ -1,4 +1,4 @@
-var mongoose = require('mongoose')
+var mongoose = require('mongoose');
 
 // Genre Schema
 var bookSchema = mongoose.Schema({
@@ -39,4 +39,4 @@ var Book = module.exports = mongoose.model('Book', bookSchema);
 // Get Genres
 module.exports.getBooks = function(callback, limit){
   Book.find(callback).limit(limit);
-}
+};
